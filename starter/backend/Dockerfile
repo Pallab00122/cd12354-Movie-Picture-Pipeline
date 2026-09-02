@@ -22,4 +22,4 @@ RUN pipenv install --system --deploy
 
 COPY . /app
 
-CMD ["uwsgi", "--http", ":5000", "--master", "--enable-threads", "--module", "app:app"]
+CMD ["uwsgi", "--http", ":5000", "--master", "--enable-threads", "--chdir", "/", "--module", "app:app"]
